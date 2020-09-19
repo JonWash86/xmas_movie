@@ -5,6 +5,11 @@ var movieList = require('./movies.json');
 const request = require('request');
 
 var twit = new Twitter(config);
+var stream = twit.stream('statuses/filter', {track: 'is a christmas movie'});
+
+stream.on(tweet){
+  
+}
 
 // Movie generation
 function getRandomFilm(){
